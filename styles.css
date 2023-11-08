@@ -1,0 +1,34 @@
+body {
+  margin: 0;
+  font-size: 18px;
+}
+
+.calc-container {
+  max-width: 320px;
+  background-color: lightgray;
+  margin: 1rem auto;
+  padding: 5px;
+}
+
+.screen {
+  border: solid 1px #4d4d4d;
+  font-size: 18px;
+  height: 40px;
+  margin-bottom: 1rem;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 5px;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+button {
+  padding: 10px;
+  font-size: 18px;
+}
