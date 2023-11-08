@@ -80,7 +80,11 @@ qSelector('.controls').addEventListener('click', (e) => {
 
   if (className === 'clear') {
     if (!isProcessed) {
-      operations.pop();
+      if (operations[operations.length - 1].length > 1) {
+        operations[operations.length - 1] = operations[operations.length - 1].split('').slice(0, -1).join('');
+      } else {
+        operations.pop();
+      }
     } else {
       operations = [];
       isProcessed = false;
@@ -131,7 +135,7 @@ qSelector('.controls').addEventListener('click', (e) => {
   className === 'divide' && pushOperator('/');
 
   // CALCULATE ALL
-  if (className === 'equal') {
+  if (className === 'equal' && operations.length > 2) {
     isProcessed = true;
     display();
     let value = calculate();
