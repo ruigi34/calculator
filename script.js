@@ -40,9 +40,6 @@ function calculate() {
 function pushOperator(op) {
   if (operations.length) {
     if (!operators.some((o) => o === operations[operations.length - 1])) {
-      // if (op === '*' || op === '/') {
-      //   operations[operations.length - 1] = [operations[operations.length - 1], op]
-      // }
       operations.push(op);
       display();
     }
@@ -144,30 +141,3 @@ qSelector('.controls').addEventListener('click', (e) => {
 });
 
 display();
-
-// let arr = ['22', '+', '3', '*', '4', '/', '2', '-', '2'];
-
-// let narr = arr.map((a, i, ar) => {
-//   if (a === '*' || a === '/') {
-//     return [ar[i - 1], a, ar[i + 1]];
-//   }
-//   return a;
-// });
-
-// let vnarr = narr
-//   .map((a, i, ar) => {
-//     if (Array.isArray(ar[i - 1]) || Array.isArray(ar[i + 1])) {
-//       return null;
-//     }
-//     return a;
-//   })
-//   .filter((a) => a !== null);
-
-// let xvnarr = vnarr.map((a, i, ar) => {
-//   if (Array.isArray(a) && Array.isArray(ar[i + 1])) return [[a[0], a[1], ar[i + 1][0]], ar[i + 1][1], ar[i + 1][2]];
-//   return a;
-// });
-
-// console.log(narr);
-// console.log(vnarr);
-// console.log(xvnarr);
